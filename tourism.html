@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tourism Page</title>
+</head>
+<style type="text/css">
+body {
+ 	background-image: url(./images/download.png);
+    background-color: #cccccc;
+    background-repeat:repeat-y;
+    -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+p.italic{
+	font-style:italic;
+}
+p.bold{
+	font-style:oblique;
+}
+p.normal{
+	font-style:normal;
+}
+P {
+transition: color 200ms ease;
+}
+P.blink {
+color:transparent;
+}
+p.text_blink{
+	color:blue;
+}
+
+a:link {
+    color: red;
+}
+
+a:visited {
+    color: green;
+}
+a:hover {
+    color: hotpink;
+     text-decoration: underline;
+}
+
+a:active {
+    color: blue;
+     text-decoration: underline;
+}
+</style>
+
+<body onload="blink();">
+<h1 align="center" style="color: #006400">Welcome to Tourists Map!</h1>
+<p class="text_blink" align="center" id="blinking">One Stop Destination to know the Top 3 tourist places in India !</p>
+<script>
+function blink() {
+   var f = document.getElementById('blinking');
+   setInterval(function() {
+      f.style.display = (f.style.display == 'none' ? '' : 'none');
+   }, 1200);
+}
+</script>
+<h2 align="left">AGRA</h2>
+<p class="bold" align="center" style="color: #8B008B;">Tajmahal</p>
+<img src="./images/TajMahal.png" alt="tajmahal" align="center">
+<p class="normal">Agra’s <a href="http://www.tajmahal.gov.in/">TajMahal</a> is one of the most famous buildings in the world, the mausoleum of Shah Jahan’s favorite wife, Mumtaz Mahal. It is one of the New Seven Wonders of the world, and one of three World Heritage Sites in Agra.<br></p>
+<p class="italic">Completed in 1653, the Taj Mahal was built by the Mughal king Shah Jahan as the final resting place for his beloved wife, Mumtaz Mahal. </p>
+
+<h2 align="left">JAIPUR</h2>
+<p class="bold" align="center" style="color:#191970;">Udaipur</p>
+<p class="normal">Jaipur is also popularly known as the Pink City, is the capital of the Indian state of Rajasthan. Jaipur is a very famous tourist and education destination in India.<br></p>
+<p class="italic">Lots of people flock to Jaipur to view the various forts and monuments in Jaipur which reflect its glorious past. Tourism is a significant part of Jaipur’s economy. Some of the world’s best hotels are located here. </p>
+<img src="./images/Jaipur.png" alt="Jaipur" align="center">
+<h3 align="left">Forts and Monuments</h3>
+<ul>
+	<li><a href="https://en.wikipedia.org/wiki/Hawa_Mahal">Hawa Mahal</a></li>
+	<li><a href="https://en.wikipedia.org/wiki/Amer_Fort">Amer Fort</a></li>
+	<li><a href="https://en.wikipedia.org/wiki/Jaigarh_Fort">Jaigarh Fort</a></li>
+	<li><a href="https://en.wikipedia.org/wiki/City_Palace,_Jaipur">City Palace</a></li>
+	<li><a href="https://en.wikipedia.org/wiki/Jal_Mahals">Jal Mahal</a></li>
+</ul>
+
+<h2 align="left">GOA</h2>
+<p class="bold" align="center" style="color: #8B0000;">Beaches</p>
+<p class="normal">Goa is Famous for its pristine beaches, infact 90% of all the tourism in Goa happens only for its beautiful beaches in Coastal Areas. Goa has two main tourist seasons: winter and summer.<br></p>
+<img src="./images/Goa.png" alt="goa" align="center"><br>
+<p class="italic">
+ In the winter time, tourists from abroad (mainly Europe) come to Goa to enjoy the splendid climate. In the summertime (which, in Goa, is the rainy season), tourists from across India come to spend the holidays.</p>
+ <a href="https://www.goa.gov.in" alt="goa">For more details click here..!</a>	
+</body>
+</html>
