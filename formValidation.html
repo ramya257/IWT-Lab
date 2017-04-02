@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form Validation</title>
+</head>
+<body onload="firstfocus();">
+<center>
+<form name="validation">
+	Enter your name:<input type="text" name="name" size="12" onblur="allLetter"><br>
+	<br>Enter password:<input type="password" name="password" size="12" onblur="passid_validation(6)"><br>
+	<br>Enter email address:<input type="text" name="email" size="12"  onblur="ValidateEmail()"><br>
+	<br><input type="submit" name="submit">
+</form>
+</center>
+<script type="text/javascript">   
+  //to check for only letters
+  function allLetter(uid)  
+  {  
+   var letters = /^[A-Za-z]+$/;  
+   if(uid.value.match(letters))  
+     {  
+      return true;  
+     }  
+   else  
+     {  
+     alert("username should contain only letters");  
+     return false;  
+     }  
+  }  
+// This function will validate Password.  
+  function passid_validation(my)  
+  {  
+  var passid = document.registration.passid;  
+  var passid_len = passid.value.length;  
+  if (passid_len == 0 ||passid_len > my)  
+  {  
+  alert("Password should not be less than 6");  
+  passid.focus();  
+  return false;  
+  }  
+  // Focus goes to next field i.e. Name.  
+  document.validation.email.focus();  
+  return true;  
+  }  
+// This function will validate Name.  
+  function allLetter()  
+  {   
+  var uname = document.registration.username;  
+  var letters = /^[A-Za-z]+$/;  
+  if(uname.value.match(letters))  
+  {  
+  // Focus goes to next field i.e. Address.  
+  document.registration.address.focus();  
+  return true;  
+  }  
+  else  
+  {  
+  alert('Username must have alphabet characters only');  
+  uname.focus();  
+  return false;  
+  }  
+  }  
+ // This function will validate Email.  
+  function ValidateEmail()  
+  {  
+  var uemail = document.validation.email;  
+  var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;  
+  if(uemail.value.match(mailformat))  
+  {  
+  return true;  
+  }  
+  else  
+  {  
+  alert("You have entered an invalid email address!");  
+  uemail.focus();  
+  return false;  
+  }  
+  }  
+</script>
+</body>
+</html>
