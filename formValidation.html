@@ -3,79 +3,167 @@
 <head>
 	<title>Form Validation</title>
 </head>
-<body onload="firstfocus();">
-<center>
-<form name="validation">
-	Enter your name:<input type="text" name="name" size="12" onblur="allLetter"><br>
-	<br>Enter password:<input type="password" name="password" size="12" onblur="passid_validation(6)"><br>
-	<br>Enter email address:<input type="text" name="email" size="12"  onblur="ValidateEmail()"><br>
-	<br><input type="submit" name="submit">
-</form>
-</center>
-<script type="text/javascript">   
-  //to check for only letters
-  function allLetter(uid)  
-  {  
-   var letters = /^[A-Za-z]+$/;  
-   if(uid.value.match(letters))  
-     {  
-      return true;  
-     }  
-   else  
-     {  
-     alert("username should contain only letters");  
-     return false;  
-     }  
-  }  
-// This function will validate Password.  
-  function passid_validation(my)  
-  {  
-  var passid = document.registration.passid;  
-  var passid_len = passid.value.length;  
-  if (passid_len == 0 ||passid_len > my)  
-  {  
-  alert("Password should not be less than 6");  
-  passid.focus();  
-  return false;  
-  }  
-  // Focus goes to next field i.e. Name.  
-  document.validation.email.focus();  
-  return true;  
-  }  
-// This function will validate Name.  
-  function allLetter()  
+<style type="text/css">
+	*{
+ margin:0px;
+ padding:0px;
+ }
+body{
+ font-family:Tahoma, Geneva, sans-serif;
+ }
+#container{
+ width:550px;
+ background-color:rgba(250,250,252,.9);
+ margin:auto;
+ margin-top:10px;
+ margin-bottom:10px;
+ box-shadow:0 0 3px #999;
+ }
+#container_body{
+ padding:20px;
+ }
+.form_title{
+ font-size:35px;
+ color:#656176;
+ text-align:center;
+ padding:10px;
+ font-weight:normal;
+ }
+.head_para{
+ font-size:19px;
+ color:#99a2a7;
+ text-align:center;
+ font-weight:normal;
+ }
+#form_name{
+ padding:25px 0 0 15px;
+ }
+.firstnameorlastname{
+  margin-right:20px;
+ }
+.input_name{
+ width:207px;
+ padding:5px;
+ font-size:18px;
+ }
+#email_form{
+ clear:both;
+ padding:15px 0 10px 0px;
+ }
+.input_email{
+ width:434px;
+ padding:5px;
+ font-size:18px;
+ }
+#password_form{
+ padding:10px 0 10px 0px;
+ }
+.input_password{
+ width:434px;
+ padding:5px;
+ font-size:18px;
+ }
+#sign_user{
+ font-size:14px;
+ color:#FFF;
+ text-align:center;
+ background-color:#126259;
+ padding:10px;
+ margin-top:10px;
+ cursor: pointer;
+ }
+#errorBox{
+ color:#F00;
+ }
+</style>
+<body>
+<div id="emptyDiv"></div>
+<div id="description"></div>
+<!--container start-->
+<div id="container">
+  <div id="container_body">
+    <div>
+      <h2 class="form_title">User Registration Form</h2>
+      <p class="head_para">Form Validation Using Javascript</p>
+    </div>
+    <!--Form  start-->
+    <div id="form_name">
+      <div class="firstnameorlastname">
+       <form name="form" >
+       <div id="errorBox"></div>
+        <input type="text" name="Name" value="" placeholder="First Name"  class="input_name" >
+        
+      <div id="email_form">
+        <input type="text" name="Email" value=""  placeholder="Your Email" class="input_email">
+      </div>
+      <div id="password_form">
+        <input type="password" name="Password" value=""  placeholder="New Password" class="input_password">
+      </div>
+       <div>
+        <p id="sign_user" onClick="Submit()">Sign Up </p>
+      </div>
+     </form>
+    </div>
+    <!--form ends-->
+  </div>
+</div>
+<!--container ends-->
+<script type="text/javascript">
+	function Submit(){
+ var emailRegex = /^[A-Za-z0-9._]*\@[A-Za-z]*\.[A-Za-z]{2,5}$/;
+ var letters = /^[A-Za-z]+$/;  
+ var fname = document.form.Name.value,
+  femail = document.form.Email.value,
+  fpassword = document.form.Password.value
+
+  if(!fname.match(letters))  
   {   
-  var uname = document.registration.username;  
-  var letters = /^[A-Za-z]+$/;  
-  if(uname.value.match(letters))  
-  {  
-  // Focus goes to next field i.e. Address.  
-  document.registration.address.focus();  
-  return true;  
-  }  
-  else  
-  {  
   alert('Username must have alphabet characters only');  
-  uname.focus();  
+  document.form.Name.focus();  
   return false;  
   }  
-  }  
- // This function will validate Email.  
-  function ValidateEmail()  
-  {  
-  var uemail = document.validation.email;  
-  var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;  
-  if(uemail.value.match(mailformat))  
-  {  
-  return true;  
-  }  
-  else  
-  {  
-  alert("You have entered an invalid email address!");  
-  uemail.focus();  
-  return false;  
-  }  
-  }  
+  else if( fname == "")
+   {
+     document.form.Name.focus() ;
+  	document.getElementById("errorBox").innerHTML = "name cannot be empty";
+     return false;
+   }
+   else if(fname.length>6)
+   {
+   	document.form.Name.focus() ;
+  	document.getElementById("errorBox").innerHTML = "name should have atmost 6 characters";
+     return false;
+   }
+
+   if (femail == "" )
+ {
+  document.form.Email.focus();
+  document.getElementById("errorBox").innerHTML = "enter the email";
+  return false;
+  }else if(!emailRegex.test(femail)){
+  document.form.Email.focus();
+  document.getElementById("errorBox").innerHTML = "enter the valid email";
+  return false;
+  }
+    
+ if(fpassword == "")
+  {
+   document.form.Password.focus();
+   document.getElementById("errorBox").innerHTML = "enter the password";
+   return false;
+  }else if(fpassword.length<6)
+  {
+  	document.form.Password.focus();
+  	document.getElementById("errorBox").innerHTML="the password should be at least 7 characters long !";
+  	return false;
+  }
+
+   
+  if(fname != '' && femail != '' && fpassword != ''){
+   document.getElementById("errorBox").innerHTML = "form submitted successfully";
+   }
+     
+}
 </script>
 </body>
 </html>
