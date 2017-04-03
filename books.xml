@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE note [
+<!ELEMENT note (to,from,heading,body)>
+<!ELEMENT to (#PCDATA)>
+<!ELEMENT from (#PCDATA)>
+<!ELEMENT heading (#PCDATA)>
+<!ELEMENT body (#PCDATA)>
+]>
+<bookdetails>
+<books>
+<title> C </title>
+<author> Balaguruswamy </author>
+<edition> Edition-II </edition>
+<price>$30.00</price>
+</books>
+<books>
+<title> C++ </title>
+<author> yaswanth kanethkar </author> 
+<edition> Edition-I </edition>
+<price>$35.00</price>
+</books>
+<books>
+<title> JAVA </title>
+<author> Herbert Schildt </author>
+<edition> Edition-IV </edition>
+<price>$50.00</price>
+</books>
+<books>
+<title>web programming</title>
+<author>chrisbates</author>
+<edition>3</edition>
+<price>350</price>
+</books>
+<books>
+<title>internet worldwideweb</title>
+<author>ditel</author>
+<edition>3</edition>
+<price>450</price>
+</books>
+</bookdetails> 
