@@ -1,0 +1,19 @@
+bookdetails{
+	display: block;
+	padding: 10px;
+	padding-left: 10px;
+	font-family: sans-serif;
+	background-color:#BBDEFB;
+}
+books{
+	border: 2px solid black;
+	display: block;
+	margin-bottom: 10px;
+}
+title,price,author,edition{
+font-size: 20px;
+color: #000000;
+padding-left: 10px;
+font-style: serif;
+display: block;
+}

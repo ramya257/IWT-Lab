@@ -1,11 +1,6 @@
 <?xml version="1.0"?>
-<!DOCTYPE note [
-<!ELEMENT note (to,from,heading,body)>
-<!ELEMENT to (#PCDATA)>
-<!ELEMENT from (#PCDATA)>
-<!ELEMENT heading (#PCDATA)>
-<!ELEMENT body (#PCDATA)>
-]>
+<?xml-stylesheet type="text/xsl" href="bookdetails.xsl"?>
+<!DOCTYPE bookdetails SYSTEM "book.dtd">
 <bookdetails>
 <books>
 <title> C </title>
@@ -25,16 +20,18 @@
 <edition> Edition-IV </edition>
 <price>$50.00</price>
 </books>
-<books>
+<books >
 <title>web programming</title>
 <author>chrisbates</author>
-<edition>3</edition>
-<price>350</price>
+<edition>Edition-III</edition>
+<price>Rs350</price>
 </books>
 <books>
-<title>internet worldwideweb</title>
+<title>Internet worldwideweb</title>
 <author>ditel</author>
-<edition>3</edition>
-<price>450</price>
+<edition>Edition-IV</edition>
+<price>Rs450</price>
 </books>
 </bookdetails> 
+  
+
